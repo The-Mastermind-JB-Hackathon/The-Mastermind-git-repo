@@ -1,6 +1,7 @@
 .main{
     display: flex;
 }
-button{
-    margin:20px
+
+button {
+    margin: 20px;
 }

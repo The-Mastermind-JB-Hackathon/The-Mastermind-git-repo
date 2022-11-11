@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -12,10 +13,27 @@ export class ApiService {
   }
 
   login(username: string, password: string) {
-    return this.http.post(`${this.BaseURL}/api/auth/login`, { username, password });
+    return this.http.post(`${this.BaseURL}/api/auth/login`, { username, password })
+    .pipe(catchError(err => of(this.handleError(err))))
   }
 
   getAll(){
     return true
+  }
+
+  private handleError(error: any){
+    if(error.status === 404){
+      alert("Error: not found")
+    } 
+    else if(error.status === 400) {
+      alert("Error: bad input")
+    }
+    else if(error.status === 401){
+      alert("invalid credential")
+    }
+    else {
+      alert(error.error.message)
+      throw error;
+    }
   }
 }
