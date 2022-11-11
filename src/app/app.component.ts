@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'The-mastermind';
-  constructor(private router:Router){
+  constructor(private authService: AuthService, private router: Router) {}
 
-  }
-  onClick(link: string){
-    window.location.href = link;
+  ngOnInit() {
+    this.authService.isLoggedIn$.subscribe((isLogedIn) => {
+      if (!isLogedIn) {
+        this.router.navigate(['/']);
+      }
+    });
   }
 }
-

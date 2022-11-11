@@ -1,0 +1,16 @@
+div{
+    display: flex;
+    flex-direction: column;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img{
+    margin-bottom: 20px;
+}
+h1{
+    color:rgb(118, 118, 118);
+}
