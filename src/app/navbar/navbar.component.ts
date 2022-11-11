@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { LoginComponent } from '../login/login.component';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({
