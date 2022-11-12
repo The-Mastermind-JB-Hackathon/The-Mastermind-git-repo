@@ -1,4 +1,10 @@
 .form{
-    width: 200px;
+    width: 250px;
     height: 500px;
+    padding: 1em;
+	background: rgb(149, 159, 232);
+	color: hsl(0 0 100);
+	border: none;
+	border-radius: 9px;
+	
 }
