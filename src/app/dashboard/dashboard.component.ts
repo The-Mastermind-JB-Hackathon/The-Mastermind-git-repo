@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -8,7 +9,12 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {}
+  devices: any;
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private apiService: ApiService
+  ) {}
 
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe((isLogedIn) => {
@@ -16,11 +22,11 @@ export class DashboardComponent implements OnInit {
         this.router.navigate(['/']);
       }
     });
+    this.apiService.getAll().subscribe(res => this.devices = res)
   }
 
-  logout(){
-    localStorage.removeItem('token')
-    this.router.navigate(['/'])
-
+  logoutButtonAction() {
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 }
