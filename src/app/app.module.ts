@@ -36,6 +36,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { AuthService } from './services/auth.service';
 import { DevicesComponent } from './devices/devices.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { AdddeviceComponent } from './adddevice/adddevice.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     NavbarComponent,
     ModalComponent,
     DevicesComponent,
+    AdddeviceComponent,
   ],
   imports: [
     BrowserModule,

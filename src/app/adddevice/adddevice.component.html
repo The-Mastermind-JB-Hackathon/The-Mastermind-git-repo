@@ -1,0 +1,28 @@
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-outline mb-4">
+        <input formControlName="uuid" type="text" id="form2Example1" class="form-control" />
+        <label class="form-label" for="form2Example1">UUID</label>
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <input formControlName="device_name" type="text" id="form2Example2" class="form-control" />
+        <label class="form-label" for="form2Example2">Device name</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input formControlName="alert_message" type="text" id="form2Example2" class="form-control" />
+        <label class="form-label" for="form2Example2">Default alert message</label>
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+        </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mb-4">Add device</button>
+
+    <!-- Submit button -->
+</form>

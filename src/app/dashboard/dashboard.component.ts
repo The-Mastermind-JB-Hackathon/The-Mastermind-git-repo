@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { AdddeviceComponent } from '../adddevice/adddevice.component';
+import { ModalComponent } from '../modal/modal.component';
 import { ApiService } from '../services/api.service';
 import { AuthService } from '../services/auth.service';
 
@@ -9,8 +12,11 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  modalRef: MdbModalRef<ModalComponent> | null = null;
   devices: any;
+
   constructor(
+    private modalService: MdbModalService,
     private authService: AuthService,
     private router: Router,
     private apiService: ApiService
@@ -28,5 +34,8 @@ export class DashboardComponent implements OnInit {
   logoutButtonAction() {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+  openAddDeviceModal() {
+    this.modalRef = this.modalService.open(AdddeviceComponent);
   }
 }

@@ -23,6 +23,11 @@ export class ApiService {
       .get(`${this.BaseURL}/api/devices`)
       .pipe(catchError((err) => of(this.handleError(err))));
   }
+  addDevice(device: any) {
+    return this.http
+      .post(`${this.BaseURL}/api/devices/add_device`, device)
+      .pipe(catchError((err) => of(this.handleError(err))));
+  }
 
   private handleError(error: any) {
     if (error.status === 404) {
