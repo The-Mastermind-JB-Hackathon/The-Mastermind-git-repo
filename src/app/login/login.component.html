@@ -1,39 +1,23 @@
-<form (ngSubmit)="submitForm()" [formGroup]="form" autocomplete="off">
-    <div style="display: flex; justify-content: center">
-      <mat-card class="form-container">
-        <mat-card-title>Login</mat-card-title>
-  
-        <!-- Username -->
-        <div>
-          <mat-form-field>
-            <mat-label>Username</mat-label>
-            <input
-              matInput
-              placeholder="Ex. profanis"
-              formControlName="username"
-            />
-          </mat-form-field>
-        </div>
-        <!-- /Username -->
-  
-        <!-- Password -->
-        <div>
-          <mat-form-field>
-            <mat-label>Password</mat-label>
-            <input
-              matInput
-              type="password"
-              placeholder="Ex. s3c3tP@ss"
-              formControlName="password"
-            />
-          </mat-form-field>
-        </div>
-        <!-- /Password -->
-  
-        <div>
-          <button type="submit" mat-raised-button color="primary">Login</button>
-        </div>
-      </mat-card>
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input formControlName="username" type="username" id="form2Example1" class="form-control" />
+    <label class="form-label" for="form2Example1">Username</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input formControlName="password" type="password" id="form2Example2" class="form-control" />
+    <label class="form-label" for="form2Example2">Password</label>
+  </div>
+
+  <!-- 2 column grid layout for inline styling -->
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-center">
     </div>
-  </form>
-  
+
+  </div>
+  <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+  <!-- Submit button -->
+</form>

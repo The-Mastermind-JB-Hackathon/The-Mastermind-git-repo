@@ -29,11 +29,7 @@ export class NavbarComponent implements OnInit {
       }
     });
   }
-  click(selection: string) {
-    this.modalRef = this.modalService.open(ModalComponent);
-  }
-  logout(){
-    localStorage.removeItem('token')
-    this.router.navigate(['/'])
+  openLoginModal() {
+    this.modalRef = this.modalService.open(LoginComponent);
   }
 }
