@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    margin: 20px;
+}
+.associatedPhone{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+}
+.addPhone{
+    width: 50vw;
+    border: 1px solid black;
+}
+.addPhoneClass{
+    border: 1px solid black;
+}

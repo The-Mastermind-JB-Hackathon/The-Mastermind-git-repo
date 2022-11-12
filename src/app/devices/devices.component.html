@@ -1,11 +1,12 @@
-<div class="container">
-    <div class="card">
-        <img src="https://m.media-amazon.com/images/I/71WFX-mipwL.jpg" class="card-img-top"
-            alt="Fissure in Sandstone" />
-        <div class="card-body">
-            <h1>Smoke detector</h1>
-            <a href="#!" class="btn btn-primary">Button</a>
+<div class="main">
+    <div class="container" *ngFor="let device of devices">
+        <div class="card">
+            <img src="https://picsum.photos/200/200" class="card-img-top"
+                alt="Fissure in Sandstone" />
+            <div class="card-body">
+                <h1>{{device.device_name}}</h1>
+                <button (click)="openViewDeviceModal(device.device_id)" class="btn btn-primary" >View Device</button>
+            </div>
         </div>
     </div>
-
 </div>

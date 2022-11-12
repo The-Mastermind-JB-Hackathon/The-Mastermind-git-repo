@@ -3,12 +3,12 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <h1>Dashboard</h1>
         <span class="example-fill-remaining-space"></span>
-        <button (click)="logoutButtonAction()" class="btn btn-primary">Logout</button>
         <button (click)="openAddDeviceModal()" class="btn btn-primary">Add more device</button>
+        <button (click)="logoutButtonAction()" class="btn btn-primary">Logout</button>
 
     </nav>
-    
+
     <!-- Navbar -->
 
-  </header>
+</header>
 <app-devices [devices]="devices"></app-devices>

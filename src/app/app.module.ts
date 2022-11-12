@@ -37,6 +37,7 @@ import { AuthService } from './services/auth.service';
 import { DevicesComponent } from './devices/devices.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { AdddeviceComponent } from './adddevice/adddevice.component';
+import { ViewDeviceComponent } from './view-device/view-device.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { AdddeviceComponent } from './adddevice/adddevice.component';
     ModalComponent,
     DevicesComponent,
     AdddeviceComponent,
+    ViewDeviceComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,7 @@ import { AdddeviceComponent } from './adddevice/adddevice.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomepageComponent },
+      { path: 'view_device/:device_id', component: ViewDeviceComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'login', component: LoginComponent },
       { path: '**', component: NotFoundComponent },
