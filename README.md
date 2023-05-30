@@ -1,1 +1,1 @@
-https://vercel.com/alextran0899/the-mastermind-git-repo
+https://the-mastermind-git-repo.vercel.app
